@@ -538,6 +538,7 @@
                                 <span class="bp">self</span><span class="o">.</span><span class="n">_char_handle_to_characteristic_dict</span><span class="p">[</span><span class="n">char_handle</span><span class="p">]</span>
                             <span class="n">features_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
 
+    <span class="k">def</span> <span class="nf">_update_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">char_handle</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">notify_update</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Update the features related to a given characteristic.</span>
 
 <span class="sd">        Args:</span>
@@ -550,7 +551,6 @@
 <span class="sd">            bool: True if the characteristic has some features associated to it</span>
 <span class="sd">            and they have been updated, False otherwise.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">_update_features</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">char_handle</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">notify_update</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="c1"># Getting the features corresponding to the given characteristic.</span>
         <span class="n">features</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_corresponding_features</span><span class="p">(</span><span class="n">char_handle</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">features</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>

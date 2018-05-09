@@ -335,9 +335,12 @@
 
         <span class="k">try</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">write_data</span><span class="p">(</span><span class="n">command_str</span><span class="p">)</span>
-            <span class="c1"># To clean the BLE buffer.</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">characteristic_can_be_read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_characteristic</span><span class="p">()):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">read_data</span><span class="p">()</span>
+            <span class="c1"># To clean the BLE buffer read the feature and throw away the data.</span>
+            <span class="c1">#if self._parent.characteristic_can_be_read(self.get_characteristic()):</span>
+            <span class="c1">#    self.read_data()</span>
+            <span class="n">characteristic</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_characteristic</span><span class="p">()</span>
+            <span class="n">char_handle</span> <span class="o">=</span> <span class="n">characteristic</span><span class="o">.</span><span class="n">getHandle</span><span class="p">()</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span><span class="o">.</span><span class="n">readCharacteristic</span><span class="p">(</span><span class="n">char_handle</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">InvalidOperationException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span></div>
             <span class="k">raise</span> <span class="n">e</span>
 
