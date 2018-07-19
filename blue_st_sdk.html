@@ -223,7 +223,7 @@ device.</p>
 <dl class="class">
 <dt id="blue_st_sdk.feature.ExtractedData">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.feature.</code><code class="descname">ExtractedData</code><span class="sig-paren">(</span><em>sample</em>, <em>read_bytes</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/blue_st_sdk/feature.html#ExtractedData"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.feature.ExtractedData" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Class used to return the data and the number of bytes read after
 extracting data with the <a class="reference internal" href="#blue_st_sdk.feature.Feature.extract_data" title="blue_st_sdk.feature.Feature.extract_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Feature.extract_data()</span></code></a>
 method.</p>
@@ -243,7 +243,7 @@ method.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of bytes read.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -271,7 +271,7 @@ byte stream.</td>
 <dl class="class">
 <dt id="blue_st_sdk.feature.Feature">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.feature.</code><code class="descname">Feature</code><span class="sig-paren">(</span><em>name</em>, <em>node</em>, <em>description</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/blue_st_sdk/feature.html#Feature"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.feature.Feature" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>This class contains description and data exported by a node.</p>
 <p>Adding a new sensor in a node implies extending this class and implementing
 the <a class="reference internal" href="#blue_st_sdk.feature.Feature.extract_data" title="blue_st_sdk.feature.Feature.extract_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Feature.extract_data()</span></code></a> method to extract the
@@ -286,10 +286,10 @@ information from the raw data coming from the node.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Name of the feature.</li>
+<li><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Name of the feature.</li>
 <li><strong>node</strong> (<a class="reference internal" href="#blue_st_sdk.node.Node" title="blue_st_sdk.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.node.Node</span></code></a>) – Node that will update the
 feature.</li>
-<li><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – Description of the data of the feature (list
+<li><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – Description of the data of the feature (list
 of <a class="reference internal" href="blue_st_sdk.features.html#blue_st_sdk.features.field.Field" title="blue_st_sdk.features.field.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.features.field.Field</span></code></a> objects).</li>
 </ul>
 </td>
@@ -344,9 +344,9 @@ acquisition/release and to notify the user about the new sample.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>timestamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Data’s timestamp.</li>
-<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – The data read from the feature.</li>
-<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Offset where to start reading data.</li>
+<li><strong>timestamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Data’s timestamp.</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – The data read from the feature.</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Offset where to start reading data.</li>
 </ul>
 </td>
 </tr>
@@ -357,7 +357,7 @@ number of bytes read and the extracted data.</p>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#blue_st_sdk.feature.ExtractedData" title="blue_st_sdk.feature.ExtractedData"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.ExtractedData</span></code></a></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.6)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a> if the data array has not enough data to read.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a> if the data array has not enough data to read.</p>
 </td>
 </tr>
 </tbody>
@@ -398,7 +398,7 @@ for more information.</td>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The description of the data fields of the feature (list of
 <a class="reference internal" href="blue_st_sdk.features.html#blue_st_sdk.features.field.Field" title="blue_st_sdk.features.field.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.features.field.Field</span></code></a> objects).</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)">list</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></td>
 </tr>
 </tbody>
 </table>
@@ -432,7 +432,7 @@ for more information.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The feature name.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)">str</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
 </tr>
 </tbody>
 </table>
@@ -482,7 +482,7 @@ if missing.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>sample</strong> (<a class="reference internal" href="#blue_st_sdk.feature.Sample" title="blue_st_sdk.feature.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Sample</span></code></a>) – Sample data.</li>
-<li><strong>index</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Position to be tested.</li>
+<li><strong>index</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Position to be tested.</li>
 </ul>
 </td>
 </tr>
@@ -490,7 +490,7 @@ if missing.</td>
 index position, False otherwise.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></p>
 </td>
 </tr>
 </tbody>
@@ -510,7 +510,7 @@ equivalent characteristic.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the node exports the data of the feature, False
 otherwise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -526,7 +526,7 @@ otherwise.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the feature is notifying, False otherwise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -542,7 +542,7 @@ otherwise.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The raw data read.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)">str</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="blue_st_sdk.utils.html#blue_st_sdk.utils.blue_st_exceptions.InvalidOperationException" title="blue_st_sdk.utils.blue_st_exceptions.InvalidOperationException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">blue_st_sdk.utils.blue_st_exceptions.InvalidOperationException</span></code></a> – is raised if the feature is not enabled or the operation
 required is not supported.</td>
@@ -589,7 +589,7 @@ be removed.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>flag</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – New enable status: True to enable, False otherwise.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>flag</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – New enable status: True to enable, False otherwise.</td>
 </tr>
 </tbody>
 </table>
@@ -604,7 +604,7 @@ be removed.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>flag</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – New notification status: True to enable, False</li>
+<li><strong>flag</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – New notification status: True to enable, False</li>
 <li><strong>otherwise.</strong> – </li>
 </ul>
 </td>
@@ -627,10 +627,10 @@ the last-updated value, and to acquire the write-lock.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>timestamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Package’s timestamp.</li>
-<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – Feature’s data.</li>
-<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Offset position to start reading data.</li>
-<li><strong>notify_update</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a><em>, </em><em>optional</em>) – If True all the registered listeners
+<li><strong>timestamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Package’s timestamp.</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – Feature’s data.</li>
+<li><strong>offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Offset position to start reading data.</li>
+<li><strong>notify_update</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – If True all the registered listeners
 are notified about the new data.</li>
 </ul>
 </td>
@@ -638,7 +638,7 @@ are notified about the new data.</li>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The number of bytes read.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></p>
 </td>
 </tr>
 </tbody>
@@ -653,7 +653,7 @@ are notified about the new data.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Raw data to write.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Raw data to write.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="blue_st_sdk.utils.html#blue_st_sdk.utils.blue_st_exceptions.InvalidOperationException" title="blue_st_sdk.utils.blue_st_exceptions.InvalidOperationException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">blue_st_sdk.utils.blue_st_exceptions.InvalidOperationException</span></code></a> – is raised if the feature is not enabled or the operation
 required is not supported.</td>
@@ -667,7 +667,7 @@ required is not supported.</td>
 <dl class="class">
 <dt id="blue_st_sdk.feature.FeatureListener">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.feature.</code><code class="descname">FeatureListener</code><a class="reference internal" href="_modules/blue_st_sdk/feature.html#FeatureListener"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.feature.FeatureListener" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Interface used by the <a class="reference internal" href="#blue_st_sdk.feature.Feature" title="blue_st_sdk.feature.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Feature</span></code></a> class to
 notify changes of a feature’s data.</p>
 <dl class="method">
@@ -695,7 +695,7 @@ from the feature.</li>
 <dl class="class">
 <dt id="blue_st_sdk.feature.FeatureLogger">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.feature.</code><code class="descname">FeatureLogger</code><a class="reference internal" href="_modules/blue_st_sdk/feature.html#FeatureLogger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.feature.FeatureLogger" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Interface used by the <a class="reference internal" href="#blue_st_sdk.feature.Feature" title="blue_st_sdk.feature.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Feature</span></code></a> class to
 log changes of a feature’s data.</p>
 </dd></dl>
@@ -703,7 +703,7 @@ log changes of a feature’s data.</p>
 <dl class="class">
 <dt id="blue_st_sdk.feature.Sample">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.feature.</code><code class="descname">Sample</code><span class="sig-paren">(</span><em>data</em>, <em>description</em>, <em>timestamp=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/blue_st_sdk/feature.html#Sample"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.feature.Sample" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Class that contains the last data from the node.</p>
 <dl class="method">
 <dt id="blue_st_sdk.feature.Sample.__init__">
@@ -714,10 +714,10 @@ log changes of a feature’s data.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – Feature’s data.</li>
-<li><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – Description of the data of the feature (list
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – Feature’s data.</li>
+<li><strong>description</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – Description of the data of the feature (list
 of <a class="reference internal" href="blue_st_sdk.features.html#blue_st_sdk.features.field.Field" title="blue_st_sdk.features.field.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.features.field.Field</span></code></a> objects).</li>
-<li><strong>timestamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Data’s timestamp.</li>
+<li><strong>timestamp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Data’s timestamp.</li>
 </ul>
 </td>
 </tr>
@@ -738,7 +738,7 @@ of <a class="reference internal" href="blue_st_sdk.features.html#blue_st_sdk.fea
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the objects are equal (timestamp and data), False
 otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -783,7 +783,7 @@ otherwise.</td>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of <a class="reference internal" href="blue_st_sdk.features.html#blue_st_sdk.features.field.Field" title="blue_st_sdk.features.field.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.features.field.Field</span></code></a> describing
 the sample.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)">list</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></td>
 </tr>
 </tbody>
 </table>
@@ -799,7 +799,7 @@ the sample.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The notification time.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -815,7 +815,7 @@ the sample.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The timestamp of the sample.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -832,7 +832,7 @@ Bluetooth Low Energy (BLE) devices/nodes and allocating the needed resources.</p
 <dl class="class">
 <dt id="blue_st_sdk.manager.Manager">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.manager.</code><code class="descname">Manager</code><a class="reference internal" href="_modules/blue_st_sdk/manager.html#Manager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.manager.Manager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Singleton class to manage the discovery of Bluetooth Low Energy (BLE)
 devices.</p>
 <p>Before starting the scanning process, it is possible to define a new Device
@@ -862,8 +862,8 @@ node and before connecting to it (see
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>device_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Device identifier.</li>
-<li><strong>mask_to_features_dic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – Mask-to-features dictionary to be added
+<li><strong>device_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Device identifier.</li>
+<li><strong>mask_to_features_dic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – Mask-to-features dictionary to be added
 to the features decoder dictionary referenced by the device
 identifier. The feature masks of the dictionary must have only
 one bit set to “1”.</li>
@@ -905,7 +905,7 @@ be added.</td>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the node is added, False if a node with the same tag
 is already present.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -923,10 +923,10 @@ default timeout otherwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>show_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a><em>, </em><em>optional</em>) – If True shows warnings, if any, when
+<li><strong>show_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – If True shows warnings, if any, when
 discovering devices not respecting the BlueSTSDK’s advertising
 data format, nothing otherwise.</li>
-<li><strong>timeout_s</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a><em>, </em><em>optional</em>) – Time in seconds to wait before stopping
+<li><strong>timeout_s</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Time in seconds to wait before stopping
 the discovery process.</li>
 </ul>
 </td>
@@ -935,7 +935,7 @@ the discovery process.</li>
 already running.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">‘BTLEException’ is raised if this method is not run as root.</p>
@@ -954,12 +954,12 @@ identifier.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>device_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – Device identifier.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>device_id</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – Device identifier.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A copy of the features map available for the given device
 identifier if found, None otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)">dict</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a></td>
 </tr>
 </tbody>
 </table>
@@ -978,7 +978,7 @@ The match is case sensitive.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Name of the device.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Name of the device.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The node with the given name, None
 if not found.</td>
@@ -997,7 +997,7 @@ if not found.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Unique string identifier that identifies a node.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tag</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Unique string identifier that identifies a node.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The node with the given tag, None
 if not found.</td>
@@ -1051,7 +1051,7 @@ nodes until the time of invocation.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the manager is looking for new nodes, False otherwise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1107,10 +1107,10 @@ default timeout otherwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>show_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a><em>, </em><em>optional</em>) – If True shows warnings, if any, when
+<li><strong>show_warnings</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a><em>, </em><em>optional</em>) – If True shows warnings, if any, when
 discovering devices not respecting the BlueSTSDK’s advertising
 data format, nothing otherwise.</li>
-<li><strong>timeout_s</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a><em>, </em><em>optional</em>) – Time in seconds to wait before stopping
+<li><strong>timeout_s</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Time in seconds to wait before stopping
 the discovery process.</li>
 </ul>
 </td>
@@ -1119,7 +1119,7 @@ the discovery process.</li>
 already running.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></p>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">‘BTLEException’ is raised if this method is not run as root.</p>
@@ -1142,7 +1142,7 @@ already running.</p>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the discovery has been stopped, False if there are no
 running discovery processes.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">‘BTLEException’ is raised if this method is not run as root.</td>
 </tr>
@@ -1155,7 +1155,7 @@ running discovery processes.</td>
 <dl class="class">
 <dt id="blue_st_sdk.manager.ManagerListener">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.manager.</code><code class="descname">ManagerListener</code><a class="reference internal" href="_modules/blue_st_sdk/manager.html#ManagerListener"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.manager.ManagerListener" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Interface used by the <a class="reference internal" href="#blue_st_sdk.manager.Manager" title="blue_st_sdk.manager.Manager"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.manager.Manager</span></code></a> class to
 notify that a new Node has been discovered or that the scanning has
 started/stopped.</p>
@@ -1170,7 +1170,7 @@ started/stopped.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>manager</strong> (<a class="reference internal" href="#blue_st_sdk.manager.Manager" title="blue_st_sdk.manager.Manager"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.manager.Manager</span></code></a>) – Manager instance
 that starts/stops the process.</li>
-<li><strong>enabled</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – True if a new discovery starts, False otherwise.</li>
+<li><strong>enabled</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – True if a new discovery starts, False otherwise.</li>
 </ul>
 </td>
 </tr>
@@ -1214,7 +1214,7 @@ node and allocating the needed resources.</p>
 <dl class="class">
 <dt id="blue_st_sdk.node.Node">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.node.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>scan_entry</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/blue_st_sdk/node.html#Node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.node.Node" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Peripheral</span></code>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">bluepy.btle.Peripheral</span></code>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Bluetooth Low Energy device class.</p>
 <p>This class allows exporting features using Bluetooth Low Energy (BLE)
 transmission.</p>
@@ -1251,7 +1251,7 @@ the discovery process (see
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user_defined_features</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – User-defined feature to be added.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user_defined_features</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a>) – User-defined feature to be added.</td>
 </tr>
 </tbody>
 </table>
@@ -1288,7 +1288,7 @@ for more information.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the characteristic can be notified, False otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1310,7 +1310,7 @@ for more information.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the characteristic can be read, False otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1332,7 +1332,7 @@ for more information.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the characteristic can be written, False otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1373,7 +1373,7 @@ given one, False otherwise.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user_defined_features</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a><em>, </em><em>optional</em>) – User-defined feature to be
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user_defined_features</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)"><em>dict</em></a><em>, </em><em>optional</em>) – User-defined feature to be
 added.</td>
 </tr>
 </tbody>
@@ -1394,7 +1394,7 @@ added.</td>
 disabled, or it is not possible to turn notifications off for it,
 True otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1421,7 +1421,7 @@ True otherwise.</td>
 disabled, or it is not possible to turn notifications on for it,
 True otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1438,7 +1438,7 @@ True otherwise.</td>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the current node is equal to the given node, False
 otherwise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1477,7 +1477,7 @@ search for.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of features. An empty list if no features are found.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)">list</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)">list</a></td>
 </tr>
 </tbody>
 </table>
@@ -1493,7 +1493,7 @@ search for.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A friendly name of the node.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)">str</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
 </tr>
 </tbody>
 </table>
@@ -1509,7 +1509,7 @@ search for.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The last known RSSI value.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1543,7 +1543,7 @@ for more information.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The name of the node.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)">str</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
 </tr>
 </tbody>
 </table>
@@ -1559,7 +1559,7 @@ for more information.</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The device Protocol Version.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1593,7 +1593,7 @@ for more information.</td>
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The MAC address of the node (hexadecimal string separated by
 colons).</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)">str</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
 </tr>
 </tbody>
 </table>
@@ -1609,7 +1609,7 @@ colons).</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The node transmission power in mdb.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1643,7 +1643,7 @@ colons).</td>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The type identifier of the node.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)">int</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)">int</a></td>
 </tr>
 </tbody>
 </table>
@@ -1659,7 +1659,7 @@ receives a new advertising data from this node.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rssi</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – The RSSI of the last advertising data.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rssi</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – The RSSI of the last advertising data.</td>
 </tr>
 </tbody>
 </table>
@@ -1675,7 +1675,7 @@ receives a new advertising data from this node.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the node is connected, False otherwise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1691,7 +1691,7 @@ receives a new advertising data from this node.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the node is sleeping, False otherwise.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1709,7 +1709,7 @@ receives a new advertising data from this node.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if notifications are enabled, False otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1728,7 +1728,7 @@ receives a new advertising data from this node.</p>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The raw data read.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)">str</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="blue_st_sdk.utils.html#blue_st_sdk.utils.blue_st_exceptions.InvalidOperationException" title="blue_st_sdk.utils.blue_st_exceptions.InvalidOperationException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">blue_st_sdk.utils.blue_st_exceptions.InvalidOperationException</span></code></a> – is raised if the feature is not enabled or the operation
 required is not supported.</td>
@@ -1760,7 +1760,7 @@ be removed.</td>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>advertising_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.6)"><em>list</em></a>) – <p>Advertising data. Refer to ‘getScanData()’
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>advertising_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – <p>Advertising data. Refer to ‘getScanData()’
 method of
 <a class="reference external" href="https://ianharvey.github.io/bluepy-doc/scanentry.html">ScanEntry</a>
 class for more information.</p>
@@ -1782,12 +1782,12 @@ added listener is called.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout_s</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a>) – Time in seconds to wait before returning.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout_s</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a>) – Time in seconds to wait before returning.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if a notification is received before the timeout elapses,
 False otherwise.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.6)">bool</a></td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
 </tr>
 </tbody>
 </table>
@@ -1804,7 +1804,7 @@ False otherwise.</td>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>feature</strong> (<a class="reference internal" href="#blue_st_sdk.feature.Feature" title="blue_st_sdk.feature.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Feature</span></code></a>) – The feature to
 write.</li>
-<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – The data to be written.</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – The data to be written.</li>
 </ul>
 </td>
 </tr>
@@ -1847,8 +1847,8 @@ notifications.</td>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>char_handle</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a>) – The characteristic’s handle to look for.</li>
-<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – The data notiffied from the given characteristic.</li>
+<li><strong>char_handle</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a>) – The characteristic’s handle to look for.</li>
+<li><strong>data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – The data notiffied from the given characteristic.</li>
 </ul>
 </td>
 </tr>
@@ -1861,7 +1861,7 @@ notifications.</td>
 <dl class="class">
 <dt id="blue_st_sdk.node.NodeListener">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.node.</code><code class="descname">NodeListener</code><a class="reference internal" href="_modules/blue_st_sdk/node.html#NodeListener"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.node.NodeListener" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Interface used by the <a class="reference internal" href="#blue_st_sdk.node.Node" title="blue_st_sdk.node.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.node.Node</span></code></a> class to notify
 changes of a node’s status.</p>
 <dl class="method">
@@ -1891,7 +1891,7 @@ changes of a node’s status.</p>
 <dl class="class">
 <dt id="blue_st_sdk.node.NodeStatus">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.node.</code><code class="descname">NodeStatus</code><a class="reference internal" href="_modules/blue_st_sdk/node.html#NodeStatus"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.node.NodeStatus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
 <p>Status of the node.</p>
 <dl class="attribute">
 <dt id="blue_st_sdk.node.NodeStatus.CONNECTED">
@@ -1938,7 +1938,7 @@ changes of a node’s status.</p>
 <dl class="class">
 <dt id="blue_st_sdk.node.NodeType">
 <em class="property">class </em><code class="descclassname">blue_st_sdk.node.</code><code class="descname">NodeType</code><a class="reference internal" href="_modules/blue_st_sdk/node.html#NodeType"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.node.NodeType" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.6)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></a></p>
 <p>Type of node.</p>
 <dl class="attribute">
 <dt id="blue_st_sdk.node.NodeType.BLUE_COIN">
