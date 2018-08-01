@@ -1987,19 +1987,29 @@ language.</p>
 <dl class="function">
 <dt id="blue_st_sdk.python_utils.lock">
 <code class="descclassname">blue_st_sdk.python_utils.</code><code class="descname">lock</code><span class="sig-paren">(</span><em>self</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/blue_st_sdk/python_utils.html#lock"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.python_utils.lock" title="Permalink to this definition">¶</a></dt>
-<dd><p>To be used to gain exclusive access to a block of code.</p>
+<dd><p>To be used to gain exclusive access to a block of code from different
+threads.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="blue_st_sdk.python_utils.lock_for_object">
 <code class="descclassname">blue_st_sdk.python_utils.</code><code class="descname">lock_for_object</code><span class="sig-paren">(</span><em>obj</em>, <em>locks={}</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/blue_st_sdk/python_utils.html#lock_for_object"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.python_utils.lock_for_object" title="Permalink to this definition">¶</a></dt>
-<dd><p>To be used to gain exclusive access to an object.</p>
+<dd><p>To be used to gain exclusive access to a shared object from different
+threads.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="blue_st_sdk.python_utils.synchronized">
 <code class="descclassname">blue_st_sdk.python_utils.</code><code class="descname">synchronized</code><span class="sig-paren">(</span><em>call</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/blue_st_sdk/python_utils.html#synchronized"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.python_utils.synchronized" title="Permalink to this definition">¶</a></dt>
-<dd><p>To be used to synchronize a method.</p>
+<dd><p>To be used to synchronize a method called on the same object from
+different threads.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="blue_st_sdk.python_utils.synchronized_with_attr">
+<code class="descclassname">blue_st_sdk.python_utils.</code><code class="descname">synchronized_with_attr</code><span class="sig-paren">(</span><em>lock_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/blue_st_sdk/python_utils.html#synchronized_with_attr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.python_utils.synchronized_with_attr" title="Permalink to this definition">¶</a></dt>
+<dd><p>To be used to synchronize a method called on the same object from
+different threads.</p>
 </dd></dl>
 
 </div>

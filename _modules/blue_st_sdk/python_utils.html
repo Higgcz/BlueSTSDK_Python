@@ -195,21 +195,35 @@
 <span class="c1"># UTILITY FUNCTIONS.</span>
 
 <div class="viewcode-block" id="lock_for_object"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.python_utils.lock_for_object">[docs]</a><span class="k">def</span> <span class="nf">lock_for_object</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">locks</span><span class="o">=</span><span class="p">{}):</span>
-    <span class="sd">&quot;&quot;&quot;To be used to gain exclusive access to an object.&quot;&quot;&quot;</span></div>
+    <span class="sd">&quot;&quot;&quot;To be used to gain exclusive access to a shared object from different</span>
+<span class="sd">    threads.&quot;&quot;&quot;</span></div>
     <span class="k">return</span> <span class="n">locks</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span> <span class="n">RLock</span><span class="p">())</span>
 
 <div class="viewcode-block" id="lock"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.python_utils.lock">[docs]</a><span class="k">def</span> <span class="nf">lock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;To be used to gain exclusive access to a block of code.&quot;&quot;&quot;</span></div>
+    <span class="sd">&quot;&quot;&quot;To be used to gain exclusive access to a block of code from different</span>
+<span class="sd">    threads.&quot;&quot;&quot;</span></div>
     <span class="k">return</span> <span class="n">RLock</span><span class="p">()</span>
 
 <div class="viewcode-block" id="synchronized"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.python_utils.synchronized">[docs]</a><span class="k">def</span> <span class="nf">synchronized</span><span class="p">(</span><span class="n">call</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;To be used to synchronize a method.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;To be used to synchronize a method called on the same object from</span>
+<span class="sd">    different threads.&quot;&quot;&quot;</span>
     <span class="k">assert</span> <span class="n">call</span><span class="o">.</span><span class="vm">__code__</span><span class="o">.</span><span class="n">co_varnames</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;self&#39;</span><span class="p">,</span> <span class="s1">&#39;cls&#39;</span><span class="p">]</span>
     <span class="nd">@wraps</span><span class="p">(</span><span class="n">call</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">lock_for_object</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
             <span class="k">return</span> <span class="n">call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span></div>
     <span class="k">return</span> <span class="n">inner</span>
+
+<div class="viewcode-block" id="synchronized_with_attr"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.python_utils.synchronized_with_attr">[docs]</a><span class="k">def</span> <span class="nf">synchronized_with_attr</span><span class="p">(</span><span class="n">lock_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;To be used to synchronize a method called on the same object from</span>
+<span class="sd">    different threads.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">synced_method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">):</span>
+            <span class="n">lock</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lock_name</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">lock</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">synced_method</span></div>
+    <span class="k">return</span> <span class="n">decorator</span>
 
 <div class="viewcode-block" id="get_class"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.python_utils.get_class">[docs]</a><span class="k">def</span> <span class="nf">get_class</span><span class="p">(</span><span class="n">class_name</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Get a class from the class name throuth the &#39;reflection&#39; property.&quot;&quot;&quot;</span>
