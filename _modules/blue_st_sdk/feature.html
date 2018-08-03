@@ -644,7 +644,12 @@
 <span class="sd">    method.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="ExtractedData.__init__"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.feature.ExtractedData.__init__">[docs]</a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sample</span><span class="p">,</span> <span class="n">read_bytes</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Constructor.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Constructor.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            sample (:class:`blue_st_sdk.feature.Sample`): A sample object.</span>
+<span class="sd">            read_bytes (int): The number of bytes read after extracting data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="c1"># Data extracted from the byte stream.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sample</span> <span class="o">=</span> <span class="n">sample</span>
