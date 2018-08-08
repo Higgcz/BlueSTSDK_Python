@@ -369,7 +369,10 @@ number of bytes read and the extracted data.</p>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><a class="reference internal" href="#blue_st_sdk.feature.ExtractedData" title="blue_st_sdk.feature.ExtractedData"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.ExtractedData</span></code></a></p>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a> if the data array has not enough data to read.</p>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> if the method has not been implemented.</li>
+<li><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">Exception</span></code></a> if the data array has not enough data to read.</li>
+</ul>
 </td>
 </tr>
 </tbody>
@@ -690,12 +693,15 @@ notify changes of a feature’s data.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>feature</strong> (<a class="reference internal" href="#blue_st_sdk.feature.Feature" title="blue_st_sdk.feature.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Feature</span></code></a>) – Feature that has
 updated.</li>
 <li><strong>sample</strong> (<a class="reference internal" href="#blue_st_sdk.feature.Sample" title="blue_st_sdk.feature.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Sample</span></code></a>) – Sample data extracted
 from the feature.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> if the method has not been implemented.</p>
 </td>
 </tr>
 </tbody>
@@ -710,6 +716,30 @@ from the feature.</li>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>Interface used by the <a class="reference internal" href="#blue_st_sdk.feature.Feature" title="blue_st_sdk.feature.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Feature</span></code></a> class to
 log changes of a feature’s data.</p>
+<dl class="method">
+<dt id="blue_st_sdk.feature.FeatureLogger.log_update">
+<code class="descname">log_update</code><span class="sig-paren">(</span><em>feature</em>, <em>raw_data</em>, <em>sample</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/blue_st_sdk/feature.html#FeatureLogger.log_update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#blue_st_sdk.feature.FeatureLogger.log_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>To be called to log the updates of the feature.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>feature</strong> (<a class="reference internal" href="#blue_st_sdk.feature.Feature" title="blue_st_sdk.feature.Feature"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Feature</span></code></a>) – Feature that has
+updated.</li>
+<li><strong>raw_data</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – Raw data used to update the feature.</li>
+<li><strong>sample</strong> (<a class="reference internal" href="#blue_st_sdk.feature.Sample" title="blue_st_sdk.feature.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">blue_st_sdk.feature.Sample</span></code></a>) – Sample data extracted
+from the feature.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#NotImplementedError" title="(in Python v3.7)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">NotImplementedError</span></code></a> if the method has not been implemented.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -1777,6 +1807,8 @@ method of
 <a class="reference external" href="https://ianharvey.github.io/bluepy-doc/scanentry.html">ScanEntry</a>
 class for more information.</p>
 </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><a class="reference internal" href="blue_st_sdk.utils.html#blue_st_sdk.utils.blue_st_exceptions.InvalidBLEAdvertisingDataException" title="blue_st_sdk.utils.blue_st_exceptions.InvalidBLEAdvertisingDataException"><code class="xref py py-exc docutils literal notranslate"><span class="pre">blue_st_sdk.utils.blue_st_exceptions.InvalidBLEAdvertisingDataException</span></code></a> – is raised if the advertising data is not well formed.</td>
 </tr>
 </tbody>
 </table>

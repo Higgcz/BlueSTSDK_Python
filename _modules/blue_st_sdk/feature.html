@@ -441,7 +441,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">logger</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_loggers</span><span class="p">:</span>
             <span class="c1"># Calling user-defined callback.</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_thread_pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">logger</span><span class="o">.</span><span class="n">_log_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">,</span> <span class="n">sample</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_thread_pool</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">logger</span><span class="o">.</span><span class="n">log_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">,</span> <span class="n">sample</span><span class="p">))</span>
 
 <div class="viewcode-block" id="Feature.update"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.feature.Feature.update">[docs]</a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">notify_update</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Update feature&#39;s internal data through an atomic operation, and</span>
@@ -552,10 +552,11 @@
 <span class="sd">            number of bytes read and the extracted data.</span>
 
 <span class="sd">        Raises:</span>
+<span class="sd">            :exc:`NotImplementedError` if the method has not been implemented.</span>
 <span class="sd">            :exc:`Exception` if the data array has not enough data to read.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span></div>
-            <span class="s1">&#39;You must define &quot;extract_data()&quot; to use the &quot;Feature&quot; class.&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;You must implement &quot;extract_data()&quot; to use the &quot;Feature&quot; class.&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get a string representing the last sample.</span>
@@ -606,9 +607,12 @@
 <span class="sd">                updated.</span>
 <span class="sd">            sample (:class:`blue_st_sdk.feature.Sample`): Sample data extracted</span>
 <span class="sd">                from the feature.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :exc:`NotImplementedError` if the method has not been implemented.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span></div></div>
-            <span class="s1">&#39;You must define &quot;on_update()&quot; to use the &quot;FeatureListener&quot; class.&#39;</span><span class="p">)</span>
+            <span class="s1">&#39;You must implement &quot;on_update()&quot; to use the &quot;FeatureListener&quot; class.&#39;</span><span class="p">)</span>
 
 <span class="c1">#</span>
 <span class="c1"># Interface used to dump the feature&#39;s data, both in raw format (as received</span>
@@ -623,8 +627,8 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">__metaclass__</span> <span class="o">=</span> <span class="n">ABCMeta</span>
 
-    <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">_log_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">,</span> <span class="n">sample</span><span class="p">):</span>
+<div class="viewcode-block" id="FeatureLogger.log_update"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.feature.FeatureLogger.log_update">[docs]</a>    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">log_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">,</span> <span class="n">sample</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;To be called to log the updates of the feature.</span>
 
 <span class="sd">        Args:</span>
@@ -633,9 +637,12 @@
 <span class="sd">            raw_data (str): Raw data used to update the feature.</span>
 <span class="sd">            sample (:class:`blue_st_sdk.feature.Sample`): Sample data extracted</span>
 <span class="sd">                from the feature.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :exc:`NotImplementedError` if the method has not been implemented.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span></div>
-            <span class="s1">&#39;You must define &quot;_log_update()&quot; to use the &quot;FeatureLogger&quot; class.&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span></div></div>
+            <span class="s1">&#39;You must implement &quot;log_update()&quot; to use the &quot;FeatureLogger&quot; class.&#39;</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="ExtractedData"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.feature.ExtractedData">[docs]</a><span class="k">class</span> <span class="nc">ExtractedData</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>

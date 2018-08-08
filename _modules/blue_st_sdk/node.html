@@ -777,6 +777,10 @@
 <span class="sd">                method of</span>
 <span class="sd">                `ScanEntry &lt;https://ianharvey.github.io/bluepy-doc/scanentry.html&gt;`_</span>
 <span class="sd">                class for more information.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            :exc:`blue_st_sdk.utils.blue_st_exceptions.InvalidBLEAdvertisingDataException`</span>
+<span class="sd">                is raised if the advertising data is not well formed.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_advertising_data</span> <span class="o">=</span> <span class="n">BLEAdvertisingDataParser</span><span class="p">(</span><span class="n">advertising_data</span><span class="p">)</span>
