@@ -223,45 +223,45 @@
 <span class="sd">                :class:`blue_st_sdk.features.field.Field` objects).</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="c1"># Feature name.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="sd">&quot;&quot;&quot;Feature name.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Node that will update the feature.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_parent</span> <span class="o">=</span> <span class="n">node</span>
+        <span class="sd">&quot;&quot;&quot;Node that will update the feature.&quot;&quot;&quot;</span>
 
-        <span class="c1"># List of feature&#39;s fields.</span>
-        <span class="c1"># Fields are described by name, unit, type, and minimum/maximum values.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_description</span> <span class="o">=</span> <span class="n">description</span>
+        <span class="sd">&quot;&quot;&quot;List of feature&#39;s fields.</span>
+<span class="sd">        Fields are described by name, unit, type, and minimum/maximum values.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Tells whether the feature is enabled or not.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_is_enabled</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="sd">&quot;&quot;&quot;Tells whether the feature is enabled or not.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Tells whether the feature&#39;s notifications are enabled or not</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_notify</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="sd">&quot;&quot;&quot;Tells whether the feature&#39;s notifications are enabled or not.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Pool of thread used to notify the listeners.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_thread_pool</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">Feature</span><span class="o">.</span><span class="n">_NUMBER_OF_THREADS</span><span class="p">)</span>
+        <span class="sd">&quot;&quot;&quot;Pool of thread used to notify the listeners.&quot;&quot;&quot;</span>
 
-        <span class="c1"># List of listeners to the feature changes.</span>
-        <span class="c1"># It is a thread safe list, so a listener can subscribe itself through a</span>
-        <span class="c1"># callback.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_listeners</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="sd">&quot;&quot;&quot;List of listeners to the feature changes.</span>
+<span class="sd">        It is a thread safe list, so a listener can subscribe itself through a</span>
+<span class="sd">        callback.&quot;&quot;&quot;</span>
 
-        <span class="c1"># List of listeners to log the received data.</span>
-        <span class="c1"># It is a thread safe list, so a listener can subscribe itself through a</span>
-        <span class="c1"># callback.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_loggers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="sd">&quot;&quot;&quot;List of listeners to log the received data.</span>
+<span class="sd">        It is a thread safe list, so a listener can subscribe itself through a</span>
+<span class="sd">        callback.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Local time of the last update.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_last_update</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="sd">&quot;&quot;&quot;Local time of the last update.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Last data received from the node.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_last_sample</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="sd">&quot;&quot;&quot;Last data received from the node.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Reference to the characteristic that offers the feature.</span>
-        <span class="c1"># Note: By design, it is the characteristic that offers more features</span>
-        <span class="c1">#       beyond the current one, among those offering the current one.</span></div>
         <span class="bp">self</span><span class="o">.</span><span class="n">_characteristic</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="sd">&quot;&quot;&quot;Reference to the characteristic that offers the feature.</span>
+<span class="sd">        Note: By design, it is the characteristic that offers more features</span></div>
+<span class="sd">              beyond the current one, among those offering the current one.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Feature.add_listener"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.feature.Feature.add_listener">[docs]</a>    <span class="k">def</span> <span class="nf">add_listener</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">listener</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Add a listener.</span>
@@ -658,11 +658,11 @@
 <span class="sd">            read_bytes (int): The number of bytes read after extracting data.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
-        <span class="c1"># Data extracted from the byte stream.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_sample</span> <span class="o">=</span> <span class="n">sample</span>
+        <span class="sd">&quot;&quot;&quot;Data extracted from the byte stream.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Number of bytes read.</span></div>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_read_bytes</span> <span class="o">=</span> <span class="n">read_bytes</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_read_bytes</span> <span class="o">=</span> <span class="n">read_bytes</span></div>
+        <span class="sd">&quot;&quot;&quot;Number of bytes read.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="ExtractedData.get_read_bytes"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.feature.ExtractedData.get_read_bytes">[docs]</a>    <span class="k">def</span> <span class="nf">get_read_bytes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Get the number of bytes read.</span>

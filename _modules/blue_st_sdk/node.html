@@ -255,59 +255,60 @@
         <span class="k">except</span> <span class="n">InvalidBLEAdvertisingDataException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="k">raise</span> <span class="n">e</span>
 
-        <span class="c1"># BLE device.</span>
-        <span class="c1"># Python&#39;s &quot;ScanEntry&quot; object, equivalent to Android&#39;s &quot;BluetoothDevice&quot;</span>
-        <span class="c1"># object.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_device</span> <span class="o">=</span> <span class="n">scan_entry</span>
+        <span class="sd">&quot;&quot;&quot;BLE device.</span>
+<span class="sd">        Python&#39;s &quot;ScanEntry&quot; object, equivalent to Android&#39;s &quot;BluetoothDevice&quot;</span>
+<span class="sd">        object.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Friendly name.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_friendly_name</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="sd">&quot;&quot;&quot;Friendly name.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Received Signal Strength Indication.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_rssi</span> <span class="o">=</span> <span class="n">scan_entry</span><span class="o">.</span><span class="n">rssi</span>
+        <span class="sd">&quot;&quot;&quot;Received Signal Strength Indication.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Last update to the Received Signal Strength Indication.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_last_rssi_update</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="sd">&quot;&quot;&quot;Last update to the Received Signal Strength Indication.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Status.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_status</span> <span class="o">=</span> <span class="n">NodeStatus</span><span class="o">.</span><span class="n">INIT</span>
+        <span class="sd">&quot;&quot;&quot;Status.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Pool of thread used to notify the listeners.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_thread_pool</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">Node</span><span class="o">.</span><span class="n">_NUMBER_OF_THREADS</span><span class="p">)</span>
+        <span class="sd">&quot;&quot;&quot;Pool of thread used to notify the listeners.&quot;&quot;&quot;</span>
 
-        <span class="c1"># List of listeners to the node changes.</span>
-        <span class="c1"># It is a thread safe list, so a listener can subscribe itself through a</span>
-        <span class="c1"># callback.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_listeners</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="sd">&quot;&quot;&quot;List of listeners to the node changes.</span>
+<span class="sd">        It is a thread safe list, so a listener can subscribe itself through a</span>
+<span class="sd">        callback.&quot;&quot;&quot;</span>
 
-        <span class="c1"># List of all the available features as claimed by the advertising data.</span>
-        <span class="c1"># (No duplicates.)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_available_features</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="sd">&quot;&quot;&quot;List of all the available features as claimed by the advertising data.</span>
+<span class="sd">        (No duplicates.)&quot;&quot;&quot;</span>
 
-        <span class="c1"># Mask to feature dictionary: there is an entry for each one-bit-high</span>
-        <span class="c1"># 32-bit mask.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_mask_to_feature_dic</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="sd">&quot;&quot;&quot;Mask to feature dictionary: there is an entry for each one-bit-high</span>
+<span class="sd">        32-bit mask.&quot;&quot;&quot;</span>
 
-        <span class="c1"># UUID to list of external features dictionary: there is an entry for</span>
-        <span class="c1"># each list of exported external features.</span>
-        <span class="c1"># Note: A UUID may export more than one feature.</span>
-        <span class="c1"># BlueSTSDK_Android: mExternalCharFeatures</span>
+        <span class="sd">&quot;&quot;&quot;UUID to list of external features dictionary: there is an entry for</span>
+<span class="sd">        each list of exported external features.</span>
+<span class="sd">        Note: A UUID may export more than one feature.</span>
+<span class="sd">        Note: BlueSTSDK_Android: mExternalCharFeatures.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_external_uuid_to_features_dic</span> <span class="o">=</span> <span class="n">UUIDToFeatureMap</span><span class="p">()</span>
 
-        <span class="c1"># Characteristic&#39;s handle to list of features dictionary: it tells which</span>
-        <span class="c1"># features to update when new data from a characteristic are received.</span>
-        <span class="c1"># Note: A UUID may export more than one feature.</span>
-        <span class="c1"># Note: The same feature may be added to different list of features in</span>
-        <span class="c1">#       case more characteristics have the same corresponding bit set to</span>
-        <span class="c1">#       high.</span>
-        <span class="c1"># BlueSTSDK_Android: mCharFeatureMap</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_char_handle_to_features_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="sd">&quot;&quot;&quot;Characteristic&#39;s handle to list of features dictionary: it tells</span>
+<span class="sd">        which features to update when new data from a characteristic are</span>
+<span class="sd">        received.</span>
+<span class="sd">        Note: A UUID may export more than one feature.</span>
+<span class="sd">        Note: The same feature may be added to different list of features in</span>
+<span class="sd">              case more characteristics have the same corresponding bit set to</span>
+<span class="sd">              high.</span>
+<span class="sd">        Note: BlueSTSDK_Android: mCharFeatureMap.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Characteristic&#39;s handle to characteristic dictionary.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_char_handle_to_characteristic_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="sd">&quot;&quot;&quot;Characteristic&#39;s handle to characteristic dictionary.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Unwrap timestamp reference.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_unwrap_timestamp</span> <span class="o">=</span> <span class="n">UnwrapTimestamp</span><span class="p">()</span>
+        <span class="sd">&quot;&quot;&quot;Unwrap timestamp reference.&quot;&quot;&quot;</span>
 
         <span class="c1"># Updating node.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_update_rssi</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rssi</span><span class="p">)</span>
@@ -1050,53 +1051,53 @@
 <div class="viewcode-block" id="NodeType"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.node.NodeType">[docs]</a><span class="k">class</span> <span class="nc">NodeType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Type of node.&quot;&quot;&quot;</span>
 
-    <span class="c1"># Unknown board type.</span>
     <span class="n">GENERIC</span> <span class="o">=</span> <span class="mh">0x00</span>
+    <span class="sd">&quot;&quot;&quot;Unknown board type.&quot;&quot;&quot;</span>
 
-    <span class="c1"># STEVAL-WESU1 board.</span>
     <span class="n">STEVAL_WESU1</span> <span class="o">=</span> <span class="mh">0x01</span>
+    <span class="sd">&quot;&quot;&quot;STEVAL-WESU1 board.&quot;&quot;&quot;</span>
 
-    <span class="c1"># SensorTile board.</span>
     <span class="n">SENSOR_TILE</span> <span class="o">=</span> <span class="mh">0x02</span>
+    <span class="sd">&quot;&quot;&quot;SensorTile board.&quot;&quot;&quot;</span>
 
-    <span class="c1"># BlueCoin board.</span>
     <span class="n">BLUE_COIN</span> <span class="o">=</span> <span class="mh">0x03</span>
+    <span class="sd">&quot;&quot;&quot;BlueCoin board.&quot;&quot;&quot;</span>
 
-    <span class="c1"># BlueNRG1 / BlueNRG2 STEVAL board.</span>
     <span class="n">STEVAL_IDB008VX</span> <span class="o">=</span> <span class="mh">0x04</span>
+    <span class="sd">&quot;&quot;&quot;BlueNRG1 / BlueNRG2 STEVAL board.&quot;&quot;&quot;</span>
 
-    <span class="c1"># NUCLEO-based board.</span></div>
-    <span class="n">NUCLEO</span> <span class="o">=</span> <span class="mh">0x05</span>
+    <span class="n">NUCLEO</span> <span class="o">=</span> <span class="mh">0x05</span></div>
+    <span class="sd">&quot;&quot;&quot;NUCLEO-based board.&quot;&quot;&quot;</span>
 
 
 <div class="viewcode-block" id="NodeStatus"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.node.NodeStatus">[docs]</a><span class="k">class</span> <span class="nc">NodeStatus</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Status of the node.&quot;&quot;&quot;</span>
 
-    <span class="c1"># Dummy initial status.</span>
     <span class="n">INIT</span> <span class="o">=</span> <span class="s1">&#39;INIT&#39;</span>
+    <span class="sd">&quot;&quot;&quot;Dummy initial status.&quot;&quot;&quot;</span>
 
-    <span class="c1"># Waiting for a connection and sending advertising data.</span>
     <span class="n">IDLE</span> <span class="o">=</span> <span class="s1">&#39;IDLE&#39;</span>
+    <span class="sd">&quot;&quot;&quot;Waiting for a connection and sending advertising data.&quot;&quot;&quot;</span>
 
-    <span class="c1"># Opening a connection with the node.</span>
     <span class="n">CONNECTING</span> <span class="o">=</span> <span class="s1">&#39;CONNECTING&#39;</span>
+    <span class="sd">&quot;&quot;&quot;Opening a connection with the node.&quot;&quot;&quot;</span>
 
-    <span class="c1"># Connected to the node.</span>
-    <span class="c1"># This status can be fired 2 times while doing a secure connection using</span>
-    <span class="c1"># Bluetooth pairing.</span>
     <span class="n">CONNECTED</span> <span class="o">=</span> <span class="s1">&#39;CONNECTED&#39;</span>
+    <span class="sd">&quot;&quot;&quot;Connected to the node.</span>
+<span class="sd">    This status can be fired 2 times while doing a secure connection using</span>
+<span class="sd">    Bluetooth pairing.&quot;&quot;&quot;</span>
 
-    <span class="c1"># Closing the connection to the node.</span>
     <span class="n">DISCONNECTING</span> <span class="o">=</span> <span class="s1">&#39;DISCONNECTING&#39;</span>
+    <span class="sd">&quot;&quot;&quot;Closing the connection to the node.&quot;&quot;&quot;</span>
 
-    <span class="c1"># The advertising data has been received for some time, but not anymore.</span>
     <span class="n">LOST</span> <span class="o">=</span> <span class="s1">&#39;LOST&#39;</span>
+    <span class="sd">&quot;&quot;&quot;The advertising data has been received for some time, but not anymore.&quot;&quot;&quot;</span>
 
-    <span class="c1"># The node disappeared without first disconnecting.</span>
     <span class="n">UNREACHABLE</span> <span class="o">=</span> <span class="s1">&#39;UNREACHABLE&#39;</span>
+    <span class="sd">&quot;&quot;&quot;The node disappeared without first disconnecting.&quot;&quot;&quot;</span>
 
-    <span class="c1"># Dummy final status.</span></div>
-    <span class="n">DEAD</span> <span class="o">=</span> <span class="s1">&#39;DEAD&#39;</span>
+    <span class="n">DEAD</span> <span class="o">=</span> <span class="s1">&#39;DEAD&#39;</span></div>
+    <span class="sd">&quot;&quot;&quot;Dummy final status.&quot;&quot;&quot;</span>
 
 
 <span class="c1"># INTERFACES</span>

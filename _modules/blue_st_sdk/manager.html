@@ -222,11 +222,13 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">            show_warnings (bool, optional): If True shows warnings, if any, when</span>
-<span class="sd">                discovering devices not respecting the BlueSTSDK&#39;s advertising</span>
-<span class="sd">                data format, nothing otherwise.</span>
+<span class="sd">                discovering devices that do not respect the BlueSTSDK&#39;s</span>
+<span class="sd">                advertising data format, nothing otherwise.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">DefaultDelegate</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">_show_warnings</span> <span class="o">=</span> <span class="n">show_warnings</span>
+        <span class="sd">&quot;&quot;&quot;If True shows warnings, if any, during the discovery process.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">handleDiscovery</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scan_entry</span><span class="p">,</span> <span class="n">is_new_device</span><span class="p">,</span> <span class="n">is_new_data</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Discovery handling callback.</span>
@@ -380,25 +382,25 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_INSTANCE</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;An instance of </span><span class="se">\&#39;</span><span class="s1">Manager</span><span class="se">\&#39;</span><span class="s1"> class already exists.&#39;</span><span class="p">)</span>
 
-        <span class="c1"># BLE scanner.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_scanner</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="sd">&quot;&quot;&quot;BLE scanner.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Scanning status.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_is_scanning</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="sd">&quot;&quot;&quot;Scanning status.&quot;&quot;&quot;</span>
 
-        <span class="c1"># List of discovered nodes.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_discovered_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="sd">&quot;&quot;&quot;List of discovered nodes.&quot;&quot;&quot;</span>
 
-        <span class="c1"># Pool of thread used to notify the listeners.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_thread_pool</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">Manager</span><span class="o">.</span><span class="n">_NUMBER_OF_THREADS</span><span class="p">)</span>
+        <span class="sd">&quot;&quot;&quot;Pool of thread used to notify the listeners.&quot;&quot;&quot;</span>
 
-        <span class="c1"># _StoppableScanner object.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_scanner_thread</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="sd">&quot;&quot;&quot;Stoppable-scanner object.&quot;&quot;&quot;</span>
 
-        <span class="c1"># List of listeners to the manager changes.</span>
-        <span class="c1"># It is a thread safe list, so a listener can subscribe itself through a</span>
-        <span class="c1"># callback.</span></div>
         <span class="bp">self</span><span class="o">.</span><span class="n">_listeners</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="sd">&quot;&quot;&quot;List of listeners to the manager changes.</span>
+<span class="sd">        It is a thread safe list, so a listener can subscribe itself through a</span></div>
+<span class="sd">        callback.&quot;&quot;&quot;</span>
 
 <div class="viewcode-block" id="Manager.instance"><a class="viewcode-back" href="../../blue_st_sdk.html#blue_st_sdk.manager.Manager.instance">[docs]</a>    <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">instance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
