@@ -333,11 +333,11 @@
 
     <span class="n">DEFAULT_MASK_TO_FEATURE_DIC</span> <span class="o">=</span> <span class="p">{</span>
         <span class="c1">#0x80000000: feature_analog.FeatureAnalog,</span>
-        <span class="c1">#0x40000000: feature_audio_adpcm_sync.FeatureAudioADPCMSync,</span>
+        <span class="mh">0x40000000</span><span class="p">:</span> <span class="n">feature_audio_adpcm_sync</span><span class="o">.</span><span class="n">FeatureAudioADPCMSync</span><span class="p">,</span>
         <span class="mh">0x20000000</span><span class="p">:</span> <span class="n">feature_switch</span><span class="o">.</span><span class="n">FeatureSwitch</span><span class="p">,</span>
         <span class="c1">#0x10000000: feature_direction_of_arrival.FeatureDirectionOfArrival,</span>
 
-        <span class="c1">#0x08000000: feature_audio_adpcm.FeatureAudioADPCM,</span>
+        <span class="mh">0x08000000</span><span class="p">:</span> <span class="n">feature_audio_adpcm</span><span class="o">.</span><span class="n">FeatureAudioADPCM</span><span class="p">,</span>
         <span class="c1">#0x04000000: feature_microphone_level.FeatureMicrophoneLevel,</span>
         <span class="mh">0x02000000</span><span class="p">:</span> <span class="n">feature_proximity</span><span class="o">.</span><span class="n">FeatureProximity</span><span class="p">,</span>
         <span class="c1">#0x01000000: feature_luminosity.FeatureLuminosity,</span>
