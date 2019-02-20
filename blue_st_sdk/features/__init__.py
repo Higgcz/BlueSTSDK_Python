@@ -28,9 +28,9 @@ __all__ = [
     #'feature_beamforming', \
     #'feature_acceleration_event', \
     #'feature_free_fall', \
-    #'feature_mems_sensor_fusion_compact', \
+    'feature_mems_sensor_fusion_compact', \
 
-    #'feature_mems_sensor_fusion', \
+    'feature_mems_sensor_fusion', \
     #'feature_motion_intensity', \
     #'feature_compass', \
     #'feature_activity', \

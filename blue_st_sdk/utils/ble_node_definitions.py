@@ -129,7 +129,7 @@ class Debug(object):
 
         Args:
             uuid Characteristic UUID.
-        
+
         Returns:
             True if the provided UUID is a valid debug characteristic UUID,
             False otherwise.
@@ -207,9 +207,9 @@ class FeatureCharacteristic(object):
         #0x00000800: feature_beamforming.FeatureBeamforming,
         #0x00000400: feature_acceleration_event.FeatureAccelerometerEvent,
         #0x00000200: feature_free_fall.FeatureFreeFall,
-        #0x00000100: feature_mems_sensor_fusion_compact.FeatureMemsSensorFusionCompact,
+        # 0x00000100: feature_mems_sensor_fusion_compact.FeatureMemsSensorFusionCompact,
 
-        #0x00000080: feature_mems_sensor_fusion.FeatureMemsSensorFusion,
+        0x00000080: feature_mems_sensor_fusion.FeatureMemsSensorFusion,
         #0x00000020: feature_motion_intensity.FeatureMotionIntensity,
         #0x00000040: feature_compass.FeatureCompass,
         #0x00000010: feature_activity.FeatureActivity,
@@ -224,10 +224,10 @@ class FeatureCharacteristic(object):
     @classmethod
     def extract_feature_mask(self, uuid):
         """"Extract the fist 32 bits from the characteristic's UUID.
-        
+
         Args:
             uuid (str): Characteristic's UUID.
-        
+
         Returns:
             The first 32 bit of the characteristic's UUID.
         """
@@ -239,7 +239,7 @@ class FeatureCharacteristic(object):
 
         Args:
             uuid (str): Characteristic's UUID.
-        
+
         Returns:
             True if the UUID is a valid feature UUID, False otherwise.
         """
